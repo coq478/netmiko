@@ -36,7 +36,7 @@ class HPProcurveBase(CiscoSSHConnection):
             count += 1
 
         # Try one last time to past "Press any key to continue
-        self.write_channel(self.RETURN)
+        # self.write_channel(self.RETURN)
 
         # HP output contains VT100 escape codes
         self.ansi_escape_codes = True
