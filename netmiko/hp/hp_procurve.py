@@ -36,14 +36,14 @@ class HPProcurveBase(CiscoSSHConnection):
             count += 1
 
         # Try one last time to past "Press any key to continue
-        # self.write_channel(self.RETURN)
+        self.write_channel(self.RETURN)
 
         # HP output contains VT100 escape codes
         self.ansi_escape_codes = True
 
         self._test_channel_read(pattern=r'[>#]')
         self.set_base_prompt()
-        command = self.RETURN + "no page"
+        command = "no page"
         self.disable_paging(command=command)
         self.set_terminal_width(command='terminal width 511')
         # Clear the read buffer
